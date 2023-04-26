@@ -1,5 +1,21 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import styled from "styled-components";
+
+const Button=styled.button`
+outline: none;
+border: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+cursor: pointer;
+position: absolute;
+top: 18px;
+left: 15px;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: transparent;`
 
 const Path = props => (
   <motion.path
@@ -12,7 +28,7 @@ const Path = props => (
 );
 
 export const MenuToggle = ({ toggle }) => (
-  <button onClick={toggle}>
+  <Button onClick={toggle} style={{}}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{
@@ -35,5 +51,5 @@ export const MenuToggle = ({ toggle }) => (
         }}
       />
     </svg>
-  </button>
+  </Button>
 );
