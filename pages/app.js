@@ -1,5 +1,5 @@
 // app/layout.js
-import "./global.css";
+import "./styles/global.css";
 export default function StyledRootLayout({ children }) {
   return (
     <html>
