@@ -4,7 +4,7 @@ import { motion, useCycle } from "framer-motion"
 import { useDimensions } from "./use-dimensions"
 import { MenuToggle } from "./MenuToggle"
 import { Navigation } from "./Navigation"
-import styled from "styled-components";
+import Image from "next/image"
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -26,37 +26,25 @@ const sidebar = {
   }
 }
 
-export const Example = () => {
+export const Navbar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   const containerRef = useRef(null)
   const { height } = useDimensions(containerRef)
-  const Nav = styled.nav`
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-width: 300px;`
 
-  const Bg = styled.div`
-position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 300px;
-  background: #fff;`
   return (
-    <Nav>
-      <motion.nav
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        custom={height}
-        ref={containerRef}
-      >
-        <Bg>  
-              <motion.div variants={sidebar} />
-        </Bg>      <Navigation />
-        <MenuToggle toggle={() => toggleOpen()} />
-      </motion.nav>
-    </Nav>
+ <>
+ <div>
+   </div>
+    <motion.nav
+      initial={false}
+      animate={isOpen ? "open" : "closed"}
+      custom={height}
+      ref={containerRef}
+    >
+      <motion.div className="background" variants={sidebar} />
+      <Navigation />
+      <MenuToggle toggle={() => toggleOpen()} />
+    </motion.nav>
+ </>
   )
 }

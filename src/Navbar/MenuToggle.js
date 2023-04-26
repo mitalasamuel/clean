@@ -1,23 +1,32 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import { Button, Flex } from "@/Style/Main";
+import Image from "next/image";
+
 
 const Path = props => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    stroke="#fff"
     strokeLinecap="round"
     {...props}
   />
 );
 
 export const MenuToggle = ({ toggle }) => (
-  <button onClick={toggle}>
-    <svg width="23" height="23" viewBox="0 0 23 23">
+<Flex display='flex'>
+<Image
+  src='/better1.png'
+  height='100'
+  width='100'/>
+
+<Button  onClick={toggle}>
+    <svg  width="23" height="23" fill="red" viewBox="0 0 23 23">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },
-          open: { d: "M 3 16.5 L 17 2.5" }
+          open: {style:"", d: "M 3 16.5 L 17 2.5" }
         }}
       />
       <Path
@@ -28,12 +37,14 @@ export const MenuToggle = ({ toggle }) => (
         }}
         transition={{ duration: 0.1 }}
       />
-      <Path
+      <Path 
+      backgroundColor='white'
         variants={{
           closed: { d: "M 2 16.346 L 20 16.346" },
           open: { d: "M 3 2.5 L 17 16.346" }
         }}
       />
     </svg>
-  </button>
+  </Button>
+</Flex>
 );

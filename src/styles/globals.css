@@ -1,7 +1,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(180deg, #0055ff 0%, rgb(0, 153, 255) 100%);
+    background: linear-gradient(180deg, white 0%, rgb(230, 232, 234) 100%);
     overflow: hidden;
     padding: 0;
     margin: 0;
@@ -9,11 +9,10 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+  path{color: white;}
   nav {
     position: absolute;
     top: 0;
-    left: 0;
     bottom: 0;
     width: 300px;
   }
@@ -23,8 +22,8 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 300px;
-    background: #fff;
+    width: 400px;
+    background: rgb(5, 5, 5);
   }
   
   button {
@@ -58,12 +57,13 @@ body {
   
   li {
     list-style: none;
+    text-decoration: none;
+    text-decoration: none;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
   }
-  
   .icon-placeholder {
     width: 40px;
     height: 40px;
